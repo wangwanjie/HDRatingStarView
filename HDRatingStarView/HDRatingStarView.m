@@ -103,12 +103,10 @@ static CGFloat const kStarViewTop = 0;
 
     self.foreGroundLayer.frame = self.bounds;
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(0, self.frame.size.height / 2)];
-    [path addLineToPoint:CGPointMake(self.frame.size.width, self.frame.size.height / 2)];
+    [path moveToPoint:CGPointMake(0, CGRectGetHeight(self.frame) / 2)];
+    [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) / 2)];
     self.foreGroundLayer.path = path.CGPath;
-    self.foreGroundLayer.lineWidth = self.frame.size.height;
-    self.foreGroundLayer.mask = self.starContainer.layer;
-    self.foreGroundLayer.strokeEnd = 0;
+    self.foreGroundLayer.lineWidth = CGRectGetHeight(self.frame);
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
@@ -224,6 +222,8 @@ static CGFloat const kStarViewTop = 0;
         _foreGroundLayer = [[CAShapeLayer alloc] init];
         _foreGroundLayer.backgroundColor = [UIColor grayColor].CGColor;
         _foreGroundLayer.fillColor = [UIColor clearColor].CGColor;
+        _foreGroundLayer.mask = self.starContainer.layer;
+        _foreGroundLayer.strokeEnd = 0;
     }
     return _foreGroundLayer;
 }

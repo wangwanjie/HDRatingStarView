@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /* 星星个数，默认 5 个 */
 @property (nonatomic, assign) NSInteger starNum;
 
-/* 星星间距 默认15 */
+/* 星星间距 默认 5 */
 @property (nonatomic, assign) CGFloat itemMargin;
 
 /**

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'HDRatingStarView'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '高可自定义，支持任意粒度的星星点击、滑动评分. '
   s.description      = <<-DESC
 高可自定义，支持任意粒度的星星点击、滑动评分.

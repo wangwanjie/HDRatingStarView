@@ -14,23 +14,22 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Use
 
 ```ObjC
-
-    [self.view addSubview:({
-                   HDRatingStarView *view = [[HDRatingStarView alloc] init];
-                   // view.starNum = 5;
-                   // view.itemMargin = 20;
-                   // view.countForOneStar = 8;
-                   // view.fullScore = 100;
-                   view.renderColor = UIColor.redColor;
-                   view.frame = (CGRect){30, 100, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, view.starWidth)]};
-                   view.selectScoreHandler = ^(CGFloat score) {
-                       NSLog(@"打分 %.2f", score);
-                   };
-                   view;
-               })];
+[self.view addSubview:({
+               HDRatingStarView *view = [[HDRatingStarView alloc] init];
+               // view.starNum = 5;
+               // view.itemMargin = 20;
+               // view.countForOneStar = 8;
+               // view.fullScore = 100;
+               view.renderColor = UIColor.redColor;
+               view.frame = (CGRect){30, 100, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, view.starWidth)]};
+               view.selectScoreHandler = ^(CGFloat score) {
+                   NSLog(@"打分 %.2f", score);
+               };
+               view;
+           })];
 ```
 
-# custom
+## Custom
 
 ```
 /** 星星图片，默认使用 bundle 里的 */
@@ -42,7 +41,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 /* 星星个数，默认 5 个 */
 @property (nonatomic, assign) NSInteger starNum;
 
-/* 星星间距 默认15 */
+/* 星星间距 默认 5 */
 @property (nonatomic, assign) CGFloat itemMargin;
 
 /**
