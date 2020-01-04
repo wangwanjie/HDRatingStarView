@@ -1,0 +1,6 @@
+framework module Pods_HDRatingStarView_Example {
+  umbrella header "Pods-HDRatingStarView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

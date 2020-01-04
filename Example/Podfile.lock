@@ -1,0 +1,16 @@
+PODS:
+  - HDRatingStarView (1.0.0)
+
+DEPENDENCIES:
+  - HDRatingStarView (from `../`)
+
+EXTERNAL SOURCES:
+  HDRatingStarView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HDRatingStarView: 4fecef18ef58f02997215ea67dad41ec11fce791
+
+PODFILE CHECKSUM: 89e66cc21b43f6ca6560792dad2337f0eec2a4c3
+
+COCOAPODS: 1.8.4

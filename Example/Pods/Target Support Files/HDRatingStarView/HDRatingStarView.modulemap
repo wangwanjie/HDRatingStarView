@@ -1,0 +1,6 @@
+framework module HDRatingStarView {
+  umbrella header "HDRatingStarView-umbrella.h"
+
+  export *
+  module * { export * }
+}
