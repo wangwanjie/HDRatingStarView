@@ -48,7 +48,7 @@
         return view;
     };
 
-    addLabelWithTitle(@"直接设置分数，不可修改");
+    addLabelWithTitle(@"直接设置分数，设置不可修改");
     HDRatingStarView *starView = addStarRatingView();
     starView.score = 2.5;
     starView.allowTouchToSelectScore = false;

@@ -26,6 +26,68 @@ view.selectScoreHandler = ^(CGFloat score) {
 [self.view addSubview:view];
 ```
 
+### 直接设置分数，设置不可修改
+
+```
+starView.score = 2.5;
+starView.allowTouchToSelectScore = false;
+```
+### 总分 100，最小粒度 10 分，开启补偿
+
+```
+starView.fullScore = 100;
+starView.score = 2.5;
+starView.shouldFixScore = true;
+starView.allowTouchToSelectScore = false;
+```
+
+### 使用 UI 给的五角星，不使用绘制的五角星（只修改五角星形状，颜色与之无关）
+
+```
+starView.starNum = 8;
+starView.itemMargin =2;
+starView.renderColor = UIColor.greenColor;
+starView.defaultColor = UIColor.redColor;
+starView.starImage = [UIImage imageNamed:@"starUnselected"];
+```
+
+### 四颗星，总分 80 分, 打分粒度 10 分，即半星打分
+
+```
+starView.fullScore = 80;
+starView.starNum = 4;
+```
+
+### (默认 5 颗星) 总分 100 分, 打分粒度 20 分，即满星打分
+
+```
+starView.fullScore = 100;
+starView.countForOneStar = 100 / 20 / 5;
+```
+
+### 自定义颜色，修改间距
+
+```
+starView.itemMargin = 20;
+starView.renderColor = UIColor.redColor;
+starView.defaultColor = UIColor.greenColor;
+```
+
+### 支持点击、拖动打分，拖动试试
+
+```
+starView.itemMargin = 10;
+starView.starNum = 6;
+starView.renderColor = UIColor.yellowColor;
+starView.defaultColor = UIColor.blackColor;
+```
+
+### 禁用滑动打分，只能点击打分
+
+```
+starView.allowSlideToChangeScore = false;
+```
+
 ## Custom
 
 ```
