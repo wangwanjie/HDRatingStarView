@@ -7,6 +7,10 @@
 [![License](https://img.shields.io/cocoapods/l/HDRatingStarView.svg?style=flat)](https://cocoapods.org/pods/HDRatingStarView)
 [![Platform](https://img.shields.io/cocoapods/p/HDRatingStarView.svg?style=flat)](https://cocoapods.org/pods/HDRatingStarView)
 
+# Effect
+
+![Effect](https://github.com/wangwanjie/HDRatingStarView/blob/master/image/demo.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
