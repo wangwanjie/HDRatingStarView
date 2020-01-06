@@ -10,12 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/** 星星评分，只支持单行 */
 @interface HDRatingStarView : UIView
 
-/** 星星图片，默认使用 bundle 里的 */
+/**
+ * 星星图片，如果设置了将不绘制五角星
+ * 设置此属性只使用该图的形状，默认颜色依旧由 defaultColor 决定
+ */
 @property (nonatomic, strong) UIImage *starImage;
 
-/** 星星宽度，默认 35 */
+/** 星星宽度，星星宽高相同，默认 35 */
 @property (nonatomic, assign) CGFloat starWidth;
 
 /* 星星个数，默认 5 个 */
@@ -36,8 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
 /* 选择分数回调 */
 @property (nonatomic, copy) void (^selectScoreHandler)(CGFloat score);
 
-/** 渲染颜色 */
+/** 星星渲染颜色 */
 @property (nonatomic, strong) UIColor *renderColor;
+
+/** 星星默认颜色 */
+@property (nonatomic, strong) UIColor *defaultColor;
 
 @end
 

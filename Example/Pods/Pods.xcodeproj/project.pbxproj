@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15AF7BAF2CA2BBDF91C426B3F16B2B49 /* HDRatingStarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ABBA6E735618DF228553D615CA87303 /* HDRatingStarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E2D8841A2E0CCC4865C2CF022B5903E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		30E353079F576293B42981CB175C9FC8 /* HDRatingStarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2B2643BFAB4CFD8AA0BD9CF593397A /* HDRatingStarView-dummy.m */; };
 		399B0C516BE06B6808288F04B844B37B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		3EEC864CDBADCA54777608DCF6B70C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61CF0FDF820A98BD0540ED5BD756D0BE /* Images.xcassets */; };
 		3F0E7A3590F3BCEFD2D5E51020CACFE4 /* Pods-HDRatingStarView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F3011A7DE6DAC9288B07C9302E28C9 /* Pods-HDRatingStarView_Tests-dummy.m */; };
 		3FA92117DBB7CAAD040C1C8B597F269F /* Pods-HDRatingStarView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1D8F9A5E78495630E2181F8BDC2FDA /* Pods-HDRatingStarView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		656DDE0E981EDEEA1A2EF5CEE8093254 /* HDRatingStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D5947E6F0E18F6BF95FDBAC291CCB1 /* HDRatingStarView.m */; };
-		95E31515BA7E13B1F7D42DEB709D454B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		4B3CDF1BCBCFB959331128F52672B148 /* HDStarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 754EA80A26FB055621769B34297E1818 /* HDStarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D9E103CDA2B17D77964ED1E06DE1AE6 /* HDRatingStarView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F01F0BADB66883B1D42865A438639AE /* HDRatingStarView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AD5A633E2207DCBCF356F061319D643 /* Pods-HDRatingStarView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF5F759BC3B38929AA8DA34F3D48CEC /* Pods-HDRatingStarView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9E654F37F70851ECD6A30A6F2E83A80F /* HDRatingStarView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6A2D39DDDE9D6372A18CB342346776B /* HDRatingStarView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A00D8DFAE2C10F6ECDEA84521FF98433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		CA1AE8579633545E4512A21DC986876E /* HDRatingStarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C36B67E1EFD4721608B541A5D28B86B2 /* HDRatingStarView-dummy.m */; };
+		BC28B01213FF7D481165D2E49742FCE3 /* HDRatingStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74660E802DA90862E1243F60CA09961 /* HDRatingStarView.m */; };
+		C07AA1D8E3CDDB08A0EE4BDC1213EB67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		D016F77CA4F3CD2143E237C0E51A9103 /* Pods-HDRatingStarView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F248982708BE3E5C8C5269B421C2C4 /* Pods-HDRatingStarView_Example-dummy.m */; };
+		D4DAF9E4474F165BE83A3FF870C84A92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		EC18339178BCF7BEBCA6334005D8A66D /* HDStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA267F848460244E25C03C12635D31 /* HDStarView.m */; };
+		FDAC3D6747B8D154E019E72C2CBF8195 /* HDRatingStarView.h in Headers */ = {isa = PBXBuildFile; fileRef = BEE17A224C1CDF7715A094EDDEDA1EEC /* HDRatingStarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,58 +41,59 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02487422C7D077FBA9C27948AB731311 /* HDRatingStarView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HDRatingStarView-Info.plist"; sourceTree = "<group>"; };
-		03A9A8B2C342E884C21C6494DFFE8E38 /* HDRatingStarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HDRatingStarView-prefix.pch"; sourceTree = "<group>"; };
 		05FA66515C41667C6741D9C31A8B3D35 /* Pods_HDRatingStarView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HDRatingStarView_Example.framework; path = "Pods-HDRatingStarView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F1B7F6FBBBAFA6379CB7E874045B56 /* Pods_HDRatingStarView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HDRatingStarView_Tests.framework; path = "Pods-HDRatingStarView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6A52E9F6651DC2B58BA7AB547BC8F2 /* Pods-HDRatingStarView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HDRatingStarView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1D08B1AE164AD1728778ED3EC4BA14CA /* HDRatingStarView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HDRatingStarView.modulemap; sourceTree = "<group>"; };
+		25B90AEE43E0230B8A73DA46012F370B /* HDRatingStarView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HDRatingStarView.modulemap; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3B3BE09052E16481235B03B41B58B3DB /* HDRatingStarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HDRatingStarView.xcconfig; sourceTree = "<group>"; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		43BB68F730FF5534809E5F2F4A07FDE9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		43F3011A7DE6DAC9288B07C9302E28C9 /* Pods-HDRatingStarView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HDRatingStarView_Tests-dummy.m"; sourceTree = "<group>"; };
 		4C832D597355B60DB8E120598DFF129E /* Pods-HDRatingStarView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HDRatingStarView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4EA006A67FFA59190870B168F2B4A6B4 /* Pods-HDRatingStarView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HDRatingStarView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4EE05919039CD1623C1934DF020AE570 /* Pods-HDRatingStarView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HDRatingStarView_Example.modulemap"; sourceTree = "<group>"; };
+		4F01F0BADB66883B1D42865A438639AE /* HDRatingStarView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HDRatingStarView-umbrella.h"; sourceTree = "<group>"; };
 		60F248982708BE3E5C8C5269B421C2C4 /* Pods-HDRatingStarView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HDRatingStarView_Example-dummy.m"; sourceTree = "<group>"; };
-		61CF0FDF820A98BD0540ED5BD756D0BE /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HDRatingStarView/Assets/Images.xcassets; sourceTree = "<group>"; };
+		672D5E32CEF44A842BC30C19EF499956 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		6E9E4C1FDA36EC31E61CB0AAA1BD42B2 /* Pods-HDRatingStarView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HDRatingStarView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		71EA267F848460244E25C03C12635D31 /* HDStarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HDStarView.m; path = HDRatingStarView/HDStarView.m; sourceTree = "<group>"; };
+		754EA80A26FB055621769B34297E1818 /* HDStarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HDStarView.h; path = HDRatingStarView/HDStarView.h; sourceTree = "<group>"; };
 		78F755060E04DA39A44151CB878FE3DE /* Pods-HDRatingStarView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HDRatingStarView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8ABBA6E735618DF228553D615CA87303 /* HDRatingStarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HDRatingStarView.h; path = HDRatingStarView/HDRatingStarView.h; sourceTree = "<group>"; };
+		7A72BFB5AD86391B42181E2CDB58FD46 /* HDRatingStarView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HDRatingStarView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7D14F52D0C066BBE8084F9955B98A21C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		8E1D8F9A5E78495630E2181F8BDC2FDA /* Pods-HDRatingStarView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HDRatingStarView_Example-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A159F123F31BB12C0DC0E098D48B99D5 /* Pods-HDRatingStarView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HDRatingStarView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4691ACE40F1DD0900283174D40D02A4 /* Pods-HDRatingStarView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HDRatingStarView_Tests-Info.plist"; sourceTree = "<group>"; };
-		B6A2D39DDDE9D6372A18CB342346776B /* HDRatingStarView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HDRatingStarView-umbrella.h"; sourceTree = "<group>"; };
-		BD47FBACBF48FBA923281A9C4E403F33 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B74660E802DA90862E1243F60CA09961 /* HDRatingStarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HDRatingStarView.m; path = HDRatingStarView/HDRatingStarView.m; sourceTree = "<group>"; };
 		BEA4D156DB41C210E46BB6CF811C24A5 /* HDRatingStarView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HDRatingStarView.framework; path = HDRatingStarView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C36B67E1EFD4721608B541A5D28B86B2 /* HDRatingStarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HDRatingStarView-dummy.m"; sourceTree = "<group>"; };
+		BEE17A224C1CDF7715A094EDDEDA1EEC /* HDRatingStarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HDRatingStarView.h; path = HDRatingStarView/HDRatingStarView.h; sourceTree = "<group>"; };
 		C4AADB5E45060B17971A4F3428426604 /* Pods-HDRatingStarView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HDRatingStarView_Tests.modulemap"; sourceTree = "<group>"; };
-		D0D5947E6F0E18F6BF95FDBAC291CCB1 /* HDRatingStarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HDRatingStarView.m; path = HDRatingStarView/HDRatingStarView.m; sourceTree = "<group>"; };
+		CE50E8B1741F7407A060CDB85ABE0DEF /* HDRatingStarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HDRatingStarView-prefix.pch"; sourceTree = "<group>"; };
 		DC889B9BAA951EA078C8279D68084F90 /* Pods-HDRatingStarView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HDRatingStarView_Example-Info.plist"; sourceTree = "<group>"; };
 		E15FD0DAF72C1C74B8D88C26551DB007 /* Pods-HDRatingStarView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HDRatingStarView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		EDD8CC7C478F475F602522D1E2CCB39A /* HDRatingStarView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HDRatingStarView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EFF5F759BC3B38929AA8DA34F3D48CEC /* Pods-HDRatingStarView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HDRatingStarView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		F3864FBC374CFA63CDC3AF1DB7E57FD7 /* HDRatingStarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HDRatingStarView.xcconfig; sourceTree = "<group>"; };
 		F9DA7867FB854A9A3886763A5DF10641 /* Pods-HDRatingStarView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HDRatingStarView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FB1704490555D102A22CC4D3FC15326F /* Pods-HDRatingStarView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HDRatingStarView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		FB2B2643BFAB4CFD8AA0BD9CF593397A /* HDRatingStarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HDRatingStarView-dummy.m"; sourceTree = "<group>"; };
+		FC275ED0EE387C280097E655BF79DF7C /* HDRatingStarView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HDRatingStarView-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		126EED253455EE767C4D182A44E9F16A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95E31515BA7E13B1F7D42DEB709D454B /* Foundation.framework in Frameworks */,
-				A00D8DFAE2C10F6ECDEA84521FF98433 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		38D06406582473A915A8BADAE62B81A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				399B0C516BE06B6808288F04B844B37B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D376C49B45545864F0AF3359C275EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C07AA1D8E3CDDB08A0EE4BDC1213EB67 /* Foundation.framework in Frameworks */,
+				D4DAF9E4474F165BE83A3FF870C84A92 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,14 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10194439BEF5F4BC3DD33501FCBAC8FB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				61CF0FDF820A98BD0540ED5BD756D0BE /* Images.xcassets */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		11B2F1DD6A3B64AA3A3E4C3E0D3AEC91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,25 +118,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		151E55A0FA44C9257DA13DDC9019DC37 /* HDRatingStarView */ = {
+			isa = PBXGroup;
+			children = (
+				BEE17A224C1CDF7715A094EDDEDA1EEC /* HDRatingStarView.h */,
+				B74660E802DA90862E1243F60CA09961 /* HDRatingStarView.m */,
+				754EA80A26FB055621769B34297E1818 /* HDStarView.h */,
+				71EA267F848460244E25C03C12635D31 /* HDStarView.m */,
+				42BBCDF0918E080393296232C4DA443F /* Pod */,
+				DFF67F8161979BDBD513EE3C165FD660 /* Support Files */,
+			);
+			name = HDRatingStarView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		24D29CFF55E3627E84C0A6E469AF1F76 /* HDRatingStarView */ = {
-			isa = PBXGroup;
-			children = (
-				8ABBA6E735618DF228553D615CA87303 /* HDRatingStarView.h */,
-				D0D5947E6F0E18F6BF95FDBAC291CCB1 /* HDRatingStarView.m */,
-				D5C5EBF23CD2343D851F140FE76FEC36 /* Pod */,
-				10194439BEF5F4BC3DD33501FCBAC8FB /* Resources */,
-				855F0D1CC0A5FAA0C160342C3997C276 /* Support Files */,
-			);
-			name = HDRatingStarView;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		349DAFE4410BD091C1BCF1941F9A63F5 /* Targets Support Files */ = {
@@ -154,18 +149,14 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		855F0D1CC0A5FAA0C160342C3997C276 /* Support Files */ = {
+		42BBCDF0918E080393296232C4DA443F /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				1D08B1AE164AD1728778ED3EC4BA14CA /* HDRatingStarView.modulemap */,
-				F3864FBC374CFA63CDC3AF1DB7E57FD7 /* HDRatingStarView.xcconfig */,
-				C36B67E1EFD4721608B541A5D28B86B2 /* HDRatingStarView-dummy.m */,
-				02487422C7D077FBA9C27948AB731311 /* HDRatingStarView-Info.plist */,
-				03A9A8B2C342E884C21C6494DFFE8E38 /* HDRatingStarView-prefix.pch */,
-				B6A2D39DDDE9D6372A18CB342346776B /* HDRatingStarView-umbrella.h */,
+				7A72BFB5AD86391B42181E2CDB58FD46 /* HDRatingStarView.podspec */,
+				672D5E32CEF44A842BC30C19EF499956 /* LICENSE */,
+				7D14F52D0C066BBE8084F9955B98A21C /* README.md */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/HDRatingStarView";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		96CD7EF7BDA8472478AFB278F8C46808 /* Pods-HDRatingStarView_Tests */ = {
@@ -184,33 +175,37 @@
 			path = "Target Support Files/Pods-HDRatingStarView_Tests";
 			sourceTree = "<group>";
 		};
-		C809339F8101BA341A5770B1CD0FC973 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				24D29CFF55E3627E84C0A6E469AF1F76 /* HDRatingStarView */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				C809339F8101BA341A5770B1CD0FC973 /* Development Pods */,
+				DAFDE0F31F764D23DA2B6E7E7A9570A1 /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				11B2F1DD6A3B64AA3A3E4C3E0D3AEC91 /* Products */,
 				349DAFE4410BD091C1BCF1941F9A63F5 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D5C5EBF23CD2343D851F140FE76FEC36 /* Pod */ = {
+		DAFDE0F31F764D23DA2B6E7E7A9570A1 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EDD8CC7C478F475F602522D1E2CCB39A /* HDRatingStarView.podspec */,
-				BD47FBACBF48FBA923281A9C4E403F33 /* LICENSE */,
-				43BB68F730FF5534809E5F2F4A07FDE9 /* README.md */,
+				151E55A0FA44C9257DA13DDC9019DC37 /* HDRatingStarView */,
 			);
-			name = Pod;
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		DFF67F8161979BDBD513EE3C165FD660 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				25B90AEE43E0230B8A73DA46012F370B /* HDRatingStarView.modulemap */,
+				3B3BE09052E16481235B03B41B58B3DB /* HDRatingStarView.xcconfig */,
+				FB2B2643BFAB4CFD8AA0BD9CF593397A /* HDRatingStarView-dummy.m */,
+				FC275ED0EE387C280097E655BF79DF7C /* HDRatingStarView-Info.plist */,
+				CE50E8B1741F7407A060CDB85ABE0DEF /* HDRatingStarView-prefix.pch */,
+				4F01F0BADB66883B1D42865A438639AE /* HDRatingStarView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HDRatingStarView";
 			sourceTree = "<group>";
 		};
 		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
@@ -242,20 +237,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4A428448A92CAD9C35F67AFF72FB99F4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9E654F37F70851ECD6A30A6F2E83A80F /* HDRatingStarView-umbrella.h in Headers */,
-				15AF7BAF2CA2BBDF91C426B3F16B2B49 /* HDRatingStarView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4FB05D956205F04790CAB7D3A4CE97B4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3FA92117DBB7CAAD040C1C8B597F269F /* Pods-HDRatingStarView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E56206D32A487C8C710D8DEB6FEEEAA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D9E103CDA2B17D77964ED1E06DE1AE6 /* HDRatingStarView-umbrella.h in Headers */,
+				FDAC3D6747B8D154E019E72C2CBF8195 /* HDRatingStarView.h in Headers */,
+				4B3CDF1BCBCFB959331128F52672B148 /* HDStarView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +268,12 @@
 /* Begin PBXNativeTarget section */
 		A3EF235AD7EDE39EBE1C370F0F18C440 /* HDRatingStarView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A6BEC962BAFA4B722327FFCA379C5D5 /* Build configuration list for PBXNativeTarget "HDRatingStarView" */;
+			buildConfigurationList = F7F4203F3BFB5462119540D51B6B6481 /* Build configuration list for PBXNativeTarget "HDRatingStarView" */;
 			buildPhases = (
-				4A428448A92CAD9C35F67AFF72FB99F4 /* Headers */,
-				08D3A81660A934AE20E0CD11A64953BA /* Sources */,
-				126EED253455EE767C4D182A44E9F16A /* Frameworks */,
-				6A65F703E4361B297347B47231F3111A /* Resources */,
+				9E56206D32A487C8C710D8DEB6FEEEAA /* Headers */,
+				8EE809A8D5219182F1E74421F30B1259 /* Sources */,
+				69D376C49B45545864F0AF3359C275EA /* Frameworks */,
+				20AEE3CA2212DED92EB19EB18BA19A83 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -362,6 +358,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20AEE3CA2212DED92EB19EB18BA19A83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FD0FC6CE498A246422E8CA71A4F99A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,31 +372,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A65F703E4361B297347B47231F3111A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3EEC864CDBADCA54777608DCF6B70C2F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		08D3A81660A934AE20E0CD11A64953BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA1AE8579633545E4512A21DC986876E /* HDRatingStarView-dummy.m in Sources */,
-				656DDE0E981EDEEA1A2EF5CEE8093254 /* HDRatingStarView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2AA955F93AD117862E1A259602BA9246 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3F0E7A3590F3BCEFD2D5E51020CACFE4 /* Pods-HDRatingStarView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE809A8D5219182F1E74421F30B1259 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E353079F576293B42981CB175C9FC8 /* HDRatingStarView-dummy.m in Sources */,
+				BC28B01213FF7D481165D2E49742FCE3 /* HDRatingStarView.m in Sources */,
+				EC18339178BCF7BEBCA6334005D8A66D /* HDStarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,38 +419,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07F8727E93FD879EEB1C9F61D37A9A1D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3864FBC374CFA63CDC3AF1DB7E57FD7 /* HDRatingStarView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HDRatingStarView/HDRatingStarView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView.modulemap";
-				PRODUCT_MODULE_NAME = HDRatingStarView;
-				PRODUCT_NAME = HDRatingStarView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1BD76C6ECDF84B431B2E8D3E4D387B0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78F755060E04DA39A44151CB878FE3DE /* Pods-HDRatingStarView_Example.debug.xcconfig */;
@@ -547,37 +511,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
-		};
-		78E30FC0A1A4FC69DA32EADCF2813D76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3864FBC374CFA63CDC3AF1DB7E57FD7 /* HDRatingStarView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HDRatingStarView/HDRatingStarView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView.modulemap";
-				PRODUCT_MODULE_NAME = HDRatingStarView;
-				PRODUCT_NAME = HDRatingStarView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -676,6 +609,37 @@
 			};
 			name = Debug;
 		};
+		8E13B55D69957864E24B2B280A339EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3BE09052E16481235B03B41B58B3DB /* HDRatingStarView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HDRatingStarView/HDRatingStarView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView.modulemap";
+				PRODUCT_MODULE_NAME = HDRatingStarView;
+				PRODUCT_NAME = HDRatingStarView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		8E2CC2E83D87D6B5836DFB0C735ACBED /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E9E4C1FDA36EC31E61CB0AAA1BD42B2 /* Pods-HDRatingStarView_Tests.release.xcconfig */;
@@ -744,6 +708,38 @@
 			};
 			name = Release;
 		};
+		BC8429B3113074EC6737F61D17DDE59D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3BE09052E16481235B03B41B58B3DB /* HDRatingStarView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HDRatingStarView/HDRatingStarView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HDRatingStarView/HDRatingStarView.modulemap";
+				PRODUCT_MODULE_NAME = HDRatingStarView;
+				PRODUCT_NAME = HDRatingStarView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -765,20 +761,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A6BEC962BAFA4B722327FFCA379C5D5 /* Build configuration list for PBXNativeTarget "HDRatingStarView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78E30FC0A1A4FC69DA32EADCF2813D76 /* Debug */,
-				07F8727E93FD879EEB1C9F61D37A9A1D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BF7C32C946152FC893CA5BFB865E5A51 /* Build configuration list for PBXNativeTarget "Pods-HDRatingStarView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BD76C6ECDF84B431B2E8D3E4D387B0E /* Debug */,
 				B38D354567D3DA9A1974C30C66C00B5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7F4203F3BFB5462119540D51B6B6481 /* Build configuration list for PBXNativeTarget "HDRatingStarView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E13B55D69957864E24B2B280A339EF8 /* Debug */,
+				BC8429B3113074EC6737F61D17DDE59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,13 +7,14 @@
 //
 
 #import "HDRatingStarView.h"
+#import "HDStarView.h"
 
 static CGFloat const kStarViewTop = 0;
 
 @interface HDRatingStarView ()
 @property (nonatomic, strong) CAShapeLayer *foreGroundLayer;
 @property (nonatomic, strong) UIView *starContainer;  ///< 星星容器
-@property (nonatomic, strong) NSMutableArray<UIImageView *> *allStarViews;
+@property (nonatomic, strong) NSMutableArray<HDStarView *> *allStarViews;
 @end
 
 @implementation HDRatingStarView
@@ -24,24 +25,13 @@ static CGFloat const kStarViewTop = 0;
     self.starContainer.userInteractionEnabled = false;
     [self.layer addSublayer:self.foreGroundLayer];
 
-    // 使用 resource_bundles，不加 use_frameworks! 才可
-    // NSURL *bundleURL = [[NSBundle bundleForClass:self.class] URLForResource:@"HDRatingStarView" withExtension:@"bundle"];
-    // NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
-    // UIImage *image = [UIImage imageNamed:@"starUnselected" inBundle:bundle compatibleWithTraitCollection:nil];
-
-    // 使用 resource，use_frameworks! 加不加均可
-    NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    UIImage *image = [UIImage imageNamed:@"starUnselected"
-                                inBundle:bundle
-           compatibleWithTraitCollection:nil];
-
-    self.starImage = image;
     self.starNum = 5;
     self.itemMargin = 5;
     self.countForOneStar = 2;
     self.fullScore = 5;
     self.starWidth = 35;
     self.renderColor = UIColor.blueColor;
+    self.defaultColor = UIColor.grayColor;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -65,15 +55,14 @@ static CGFloat const kStarViewTop = 0;
     if (_starNum == starNum) return;
     _starNum = starNum;
 
-    NSAssert(self.starImage, @"请先设置星星图片");
-
     [self.allStarViews removeAllObjects];
     [self.starContainer.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
     for (NSInteger i = 0; i < self.starNum; i++) {
-        UIImageView *item = [[UIImageView alloc] initWithImage:self.starImage];
-        [self.allStarViews addObject:item];
-        [self.starContainer addSubview:item];
+        HDStarView *star = [[HDStarView alloc] init];
+        star.image = self.starImage;
+        [self.allStarViews addObject:star];
+        [self.starContainer addSubview:star];
     }
     [self setNeedsLayout];
 }
@@ -84,18 +73,30 @@ static CGFloat const kStarViewTop = 0;
     self.foreGroundLayer.strokeColor = self.renderColor.CGColor;
 }
 
+- (void)setDefaultColor:(UIColor *)defaultColor {
+    _defaultColor = defaultColor;
+
+    self.foreGroundLayer.backgroundColor = defaultColor.CGColor;
+}
+
+- (void)setStarImage:(UIImage *)starImage {
+    _starImage = starImage;
+
+    for (HDStarView *star in self.allStarViews) {
+        star.image = starImage;
+    }
+}
+
 #pragma mark - layout
 - (void)layoutSubviews {
     [super layoutSubviews];
 
     if (CGRectIsEmpty(self.frame)) return;
 
-    NSAssert(CGRectGetHeight(self.frame) >= self.starWidth, @"控件高度不能低于星星高度");
-
     self.starContainer.frame = self.bounds;
 
     CGFloat x = 0;
-    for (UIImageView *item in self.allStarViews) {
+    for (HDStarView *item in self.allStarViews) {
         item.frame = CGRectMake(x, kStarViewTop, self.starWidth, self.starWidth);
         x += self.starWidth;
         x += self.itemMargin;
@@ -111,7 +112,7 @@ static CGFloat const kStarViewTop = 0;
 
 - (CGSize)sizeThatFits:(CGSize)size {
     CGFloat width = self.starWidth * self.starNum + (self.starNum - 1) * self.itemMargin;
-    return CGSizeMake(width, size.height);
+    return CGSizeMake(width, self.starWidth);
 }
 
 #pragma mark - override system methods
@@ -164,7 +165,7 @@ static CGFloat const kStarViewTop = 0;
     // 目标控件
     NSInteger destIndex = NSNotFound;
     for (NSInteger i = 0; i < self.allStarViews.count; i++) {
-        UIImageView *starView = self.allStarViews[i];
+        HDStarView *starView = self.allStarViews[i];
 
         CGRect fullHeightStarViewRect = CGRectMake(CGRectGetMinX(starView.frame), 0, CGRectGetWidth(starView.frame), CGRectGetHeight(self.starContainer.frame));
         if (CGRectContainsPoint(fullHeightStarViewRect, touchPoint)) {
@@ -193,7 +194,7 @@ static CGFloat const kStarViewTop = 0;
         // 点在了空白区域
         // 获取触摸点左边的星星
         for (NSInteger i = 0; i < self.allStarViews.count; i++) {
-            UIImageView *starView = self.allStarViews[i];
+            HDStarView *starView = self.allStarViews[i];
             if (touchPoint.x > CGRectGetMaxX(starView.frame) && touchPoint.x < CGRectGetMaxX(starView.frame) + self.itemMargin) {
                 destIndex = i;
                 break;
@@ -220,7 +221,6 @@ static CGFloat const kStarViewTop = 0;
 - (CAShapeLayer *)foreGroundLayer {
     if (!_foreGroundLayer) {
         _foreGroundLayer = [[CAShapeLayer alloc] init];
-        _foreGroundLayer.backgroundColor = [UIColor grayColor].CGColor;
         _foreGroundLayer.fillColor = [UIColor clearColor].CGColor;
         _foreGroundLayer.mask = self.starContainer.layer;
         _foreGroundLayer.strokeEnd = 0;
@@ -235,7 +235,7 @@ static CGFloat const kStarViewTop = 0;
     return _starContainer;
 }
 
-- (NSMutableArray<UIImageView *> *)allStarViews {
+- (NSMutableArray<HDStarView *> *)allStarViews {
     if (!_allStarViews) {
         _allStarViews = [NSMutableArray array];
     }

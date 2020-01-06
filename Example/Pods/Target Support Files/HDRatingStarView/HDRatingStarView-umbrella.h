@@ -11,6 +11,7 @@
 #endif
 
 #import "HDRatingStarView.h"
+#import "HDStarView.h"
 
 FOUNDATION_EXPORT double HDRatingStarViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char HDRatingStarViewVersionString[];
