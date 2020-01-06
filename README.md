@@ -20,12 +20,23 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```ObjC
 [self.view addSubview:({
                HDRatingStarView *view = [[HDRatingStarView alloc] init];
-               // view.starNum = 5;
-               // view.itemMargin = 20;
-               // view.countForOneStar = 8;
-               // view.fullScore = 100;
+               view.frame = (CGRect){30, 100, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, 0)]};
+               view.selectScoreHandler = ^(CGFloat score) {
+                   NSLog(@"打分 %.2f", score);
+               };
+               view;
+           })];
+
+[self.view addSubview:({
+               HDRatingStarView *view = [[HDRatingStarView alloc] init];
+               view.starImage = [UIImage imageNamed:@"starUnselected"];
+               view.starNum = 8;
+               view.itemMargin = 0;
+               view.countForOneStar = 8;
+               view.fullScore = 100;
                view.renderColor = UIColor.redColor;
-               view.frame = (CGRect){30, 100, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, view.starWidth)]};
+               view.defaultColor = UIColor.blueColor;
+               view.frame = (CGRect){30, 180, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, 0)]};
                view.selectScoreHandler = ^(CGFloat score) {
                    NSLog(@"打分 %.2f", score);
                };
@@ -36,10 +47,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Custom
 
 ```
-/** 星星图片，默认使用 bundle 里的 */
+/**
+ * 星星图片，如果设置了将不绘制五角星
+ * 设置此属性只使用该图的形状，默认颜色依旧由 defaultColor 决定
+ */
 @property (nonatomic, strong) UIImage *starImage;
 
-/** 星星宽度，默认 35 */
+/** 星星宽度，星星宽高相同，默认 35 */
 @property (nonatomic, assign) CGFloat starWidth;
 
 /* 星星个数，默认 5 个 */
@@ -60,8 +74,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 /* 选择分数回调 */
 @property (nonatomic, copy) void (^selectScoreHandler)(CGFloat score);
 
-/** 渲染颜色 */
+/** 星星渲染颜色 */
 @property (nonatomic, strong) UIColor *renderColor;
+
+/** 星星默认颜色 */
+@property (nonatomic, strong) UIColor *defaultColor;
 ```
 
 ## Requirements
