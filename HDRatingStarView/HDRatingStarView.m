@@ -32,6 +32,9 @@ static CGFloat const kStarViewTop = 0;
     self.starWidth = 35;
     self.renderColor = UIColor.blueColor;
     self.defaultColor = UIColor.grayColor;
+    self.allowTouchToSelectScore = true;
+    self.shouldFixScore = false;
+    self.allowSlideToChangeScore = true;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -87,6 +90,21 @@ static CGFloat const kStarViewTop = 0;
     }
 }
 
+- (void)setScore:(CGFloat)score {
+    score = score < 0 ? 0 : score;
+    score = score > self.fullScore ? self.fullScore : score;
+
+    _score = score;
+
+    [self drawScore:score];
+}
+
+- (void)setAllowTouchToSelectScore:(BOOL)allowTouchToSelectScore {
+    _allowTouchToSelectScore = allowTouchToSelectScore;
+
+    self.userInteractionEnabled = allowTouchToSelectScore;
+}
+
 #pragma mark - layout
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -108,6 +126,8 @@ static CGFloat const kStarViewTop = 0;
     [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) / 2)];
     self.foreGroundLayer.path = path.CGPath;
     self.foreGroundLayer.lineWidth = CGRectGetHeight(self.frame);
+
+    [self drawScore:self.score];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
@@ -117,26 +137,34 @@ static CGFloat const kStarViewTop = 0;
 
 #pragma mark - override system methods
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    // 获取touch
-    UITouch *touch = [touches anyObject];
     // 获取当前点
-    CGPoint touchPoint = [touch locationInView:self];
-    [self setStrokeWithTransformPoint:touchPoint];
+    CGPoint touchPoint = [touches.anyObject locationInView:self];
+    [self updateForeGroundLayerWithPoint:touchPoint];
+
+    if (!self.allowSlideToChangeScore) {
+        [self caculateScoreWithEndTouchPoint:touchPoint];
+    }
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    // 获取touch
-    UITouch *touch = [touches anyObject];
+
+    if (!self.allowSlideToChangeScore) return;
+
     // 获取当前点
-    CGPoint touchPoint = [touch locationInView:self];
-    [self setStrokeWithTransformPoint:touchPoint];
+    CGPoint touchPoint = [touches.anyObject locationInView:self];
+    [self updateForeGroundLayerWithPoint:touchPoint];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    // 获取touch
-    UITouch *touch = [touches anyObject];
     // 获取当前点
-    CGPoint touchPoint = [touch locationInView:self];
+    CGPoint touchPoint = [touches.anyObject locationInView:self];
+
+    [self caculateScoreWithEndTouchPoint:touchPoint];
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    // 获取当前点
+    CGPoint touchPoint = [touches.anyObject locationInView:self];
 
     [self caculateScoreWithEndTouchPoint:touchPoint];
 }
@@ -189,7 +217,7 @@ static CGFloat const kStarViewTop = 0;
         // 纠正图层终点位置
         CGPoint fixedPoint = CGPointMake(extraPieces * pieceWidth, touchPoint.y);
         CGPoint fixedPointToContainer = [starView convertPoint:fixedPoint toView:self.starContainer];
-        [self setStrokeWithTransformPoint:fixedPointToContainer];
+        [self updateForeGroundLayerWithPoint:fixedPointToContainer];
     } else {
         // 点在了空白区域
         // 获取触摸点左边的星星
@@ -207,14 +235,41 @@ static CGFloat const kStarViewTop = 0;
         }
     }
 
+    self.score = totalPieces * pieceScore;
     if (self.selectScoreHandler) {
-        self.selectScoreHandler(totalPieces * pieceScore);
+        self.selectScoreHandler(self.score);
     }
 }
 
-/* 设置图层渲染终点 */
-- (void)setStrokeWithTransformPoint:(CGPoint)transformPoint {
-    self.foreGroundLayer.strokeEnd = transformPoint.x / self.frame.size.width;
+/** 设置评分 */
+- (void)drawScore:(CGFloat)score {
+
+    // 决定是否执行分数补偿
+    if (self.shouldFixScore) {
+        CGFloat pieceScore = (CGFloat)self.fullScore / (self.starNum * self.countForOneStar);
+        if (fmodf(score, pieceScore) != 0) {
+            score = ((NSInteger)(score / pieceScore) + 1) * pieceScore;
+            _score = score;
+        }
+    }
+
+    // 先算出一个星星是几分
+    CGFloat singleStarScore = (CGFloat)self.fullScore / self.starNum;
+
+    NSInteger count = score / singleStarScore;
+    CGFloat pointX = count * (self.starWidth + self.itemMargin) - (count > 0 ? self.itemMargin : 0);
+
+    CGFloat leftScore = fmodf(score, singleStarScore);
+    if (leftScore != 0) {
+        pointX += ((count > 0 ? self.itemMargin : 0) + (leftScore / singleStarScore) * (CGFloat)self.starWidth);
+    }
+
+    [self updateForeGroundLayerWithPoint:CGPointMake(pointX, CGRectGetHeight(self.starContainer.frame) * 0.5)];
+}
+
+/* 更新图层渲染终点 */
+- (void)updateForeGroundLayerWithPoint:(CGPoint)point {
+    self.foreGroundLayer.strokeEnd = point.x / CGRectGetWidth(self.starContainer.bounds);
 }
 
 #pragma mark - lazy load
@@ -223,7 +278,6 @@ static CGFloat const kStarViewTop = 0;
         _foreGroundLayer = [[CAShapeLayer alloc] init];
         _foreGroundLayer.fillColor = [UIColor clearColor].CGColor;
         _foreGroundLayer.mask = self.starContainer.layer;
-        _foreGroundLayer.strokeEnd = 0;
     }
     return _foreGroundLayer;
 }

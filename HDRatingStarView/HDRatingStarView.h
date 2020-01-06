@@ -46,6 +46,21 @@ NS_ASSUME_NONNULL_BEGIN
 /** 星星默认颜色 */
 @property (nonatomic, strong) UIColor *defaultColor;
 
+/** 设置当前评分 */
+@property (nonatomic, assign) CGFloat score;
+
+/** 允许触摸修改评分，默认 YES */
+@property (nonatomic, assign) BOOL allowTouchToSelectScore;
+
+/**
+ * 设置分数时，是否纠正分数，默认关闭
+ * 比如如果设置的最小分数粒度是 0.5，当设置 1.4 分时，会自动补偿为 1.5 分
+ */
+@property (nonatomic, assign) BOOL shouldFixScore;
+
+/** 是否允许滑动打分，默认开启 */
+@property (nonatomic, assign) BOOL allowSlideToChangeScore;
+
 @end
 
 NS_ASSUME_NONNULL_END

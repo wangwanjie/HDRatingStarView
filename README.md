@@ -1,6 +1,6 @@
 # HDRatingStarView
 
-高可自定义，支持任意粒度的星星点击、滑动评分
+高可自定义，支持任意粒度的星星点击、滑动评分，具体使用请查看 Demo
 
 [![CI Status](https://img.shields.io/travis/wangwanjie/HDRatingStarView.svg?style=flat)](https://travis-ci.org/wangwanjie/HDRatingStarView)
 [![Version](https://img.shields.io/cocoapods/v/HDRatingStarView.svg?style=flat)](https://cocoapods.org/pods/HDRatingStarView)
@@ -18,30 +18,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Use
 
 ```ObjC
-[self.view addSubview:({
-               HDRatingStarView *view = [[HDRatingStarView alloc] init];
-               view.frame = (CGRect){30, 100, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, 0)]};
-               view.selectScoreHandler = ^(CGFloat score) {
-                   NSLog(@"打分 %.2f", score);
-               };
-               view;
-           })];
-
-[self.view addSubview:({
-               HDRatingStarView *view = [[HDRatingStarView alloc] init];
-               view.starImage = [UIImage imageNamed:@"starUnselected"];
-               view.starNum = 8;
-               view.itemMargin = 0;
-               view.countForOneStar = 8;
-               view.fullScore = 100;
-               view.renderColor = UIColor.redColor;
-               view.defaultColor = UIColor.blueColor;
-               view.frame = (CGRect){30, 180, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, 0)]};
-               view.selectScoreHandler = ^(CGFloat score) {
-                   NSLog(@"打分 %.2f", score);
-               };
-               view;
-           })];
+HDRatingStarView *view = [[HDRatingStarView alloc] init];
+view.frame = (CGRect){20, 100, [view sizeThatFits:CGSizeMake(CGFLOAT_MAX, 0)]};
+view.selectScoreHandler = ^(CGFloat score) {
+    NSLog(@"打分 %.2f", score);
+};
+[self.view addSubview:view];
 ```
 
 ## Custom
@@ -79,6 +61,21 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 /** 星星默认颜色 */
 @property (nonatomic, strong) UIColor *defaultColor;
+
+/** 设置当前评分 */
+@property (nonatomic, assign) CGFloat score;
+
+/** 允许触摸修改评分，默认 YES */
+@property (nonatomic, assign) BOOL allowTouchToSelectScore;
+
+/**
+ * 设置分数时，是否纠正分数，默认关闭
+ * 比如如果设置的最小分数粒度是 0.5，当设置 1.4 分时，会自动补偿为 1.5 分
+ */
+@property (nonatomic, assign) BOOL shouldFixScore;
+
+/** 是否允许滑动打分，默认开启 */
+@property (nonatomic, assign) BOOL allowSlideToChangeScore;
 ```
 
 ## Requirements

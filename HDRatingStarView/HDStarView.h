@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HDStarView : UIView
-@property (nonatomic, strong) UIImage *image; ///< 图片
+@property (nonatomic, strong) UIImage *image;  ///< 图片
 @end
 
 NS_ASSUME_NONNULL_END

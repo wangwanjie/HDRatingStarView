@@ -1,5 +1,5 @@
 PODS:
-  - HDRatingStarView (1.0.1)
+  - HDRatingStarView (1.1.0)
 
 DEPENDENCIES:
   - HDRatingStarView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HDRatingStarView: 6a4481a86d4382229e729e5c4139b885e775e3c1
+  HDRatingStarView: 82237610d6577135ff4943b76d8c07866a056322
 
 PODFILE CHECKSUM: 89e66cc21b43f6ca6560792dad2337f0eec2a4c3
 
